@@ -51,7 +51,7 @@
 
                  Signup
              </a>
-             <a href="/login.html" class="btn btn-login flex items-center">
+             <a href="/login" class="btn btn-login flex items-center">
                  <svg style="width: 18px; fill: currentColor; margin-right: 4px" viewBox="0 0 1024 1024" version="1.1"
                      xmlns="http://www.w3.org/2000/svg">
                      <path

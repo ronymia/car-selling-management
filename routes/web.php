@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,6 +10,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/signup', [SignupController::class, 'create']);

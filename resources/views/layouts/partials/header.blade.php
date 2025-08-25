@@ -42,7 +42,7 @@
                      </li>
                  </ul>
              </div>
-             <a href="/signup.html" class="btn btn-primary btn-signup">
+             <a href="/signup" class="btn btn-primary btn-signup">
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" style="width: 18px; margin-right: 4px">
                      <path stroke-linecap="round" stroke-linejoin="round"

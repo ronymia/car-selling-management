@@ -77,7 +77,7 @@
             <div class="container">
                 <h2>Latest Added Cars</h2>
                 <div class="car-items-listing">
-                    @for ($i = 0; $i <= 50; $i++)
+                    @for ($i = 0; $i < 12; $i++)
                         <x-car-item />
                     @endfor
                 </div>
@@ -86,9 +86,4 @@
         <!--/ New Cars -->
     </main>
 
-    {{-- FOOTER --}}
-    <x-slot:footerLinks>
-        <a href="/about">Link 3</a>
-        <a href="/contact">Link 4</a>
-    </x-slot:footerLinks>
 </x-app-layout>

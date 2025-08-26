@@ -1,3 +1,6 @@
+@props(['title' => '', 'bodyClass' => ''])
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -7,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name=""csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title') | {{ config('app.name') }}</title>
+    <title>{{ $title }} | {{ config('app.name') }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,9 +32,12 @@
 {{-- PAGE CONTENT --}}
 @yield('childContent')
 
-<body @isset($cssClass)
-    class="{{ $cssClass }}"
-@endisset>
+<body @if ($bodyClass) class="{{ $bodyClass }}" @endIf>
+
+    {{ $slot }}
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"
         integrity="sha512-XJgPMFq31Ren4pKVQgeD+0JTDzn0IwS1802sc+QTZckE6rny7AN2HLReq6Yamwpd2hFe5nJJGZLvPStWFv5Kww=="

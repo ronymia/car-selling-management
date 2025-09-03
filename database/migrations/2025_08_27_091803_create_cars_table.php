@@ -21,14 +21,15 @@ return new class extends Migration
             $table->integer('mileage');
             $table->foreignId('car_type_id')->constrained('car_types')->onDelete('cascade');
             $table->foreignId('fuel_type_id')->constrained('fuel_types')->onDelete('cascade');
-            $table->foreignId('user_type_id')->constrained('user_types')->onDelete('cascade');
-            $table->foreignId('city_type_id')->constrained('cities')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
             $table->string('address', 255);
             $table->string('phone', 45);
             $table->longText('description')->nullable();
-            $table->timestamps('published_at');
             $table->timestamps();
-            $table->timestamps('delete_at');
+
+            $table->timestamp('published_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

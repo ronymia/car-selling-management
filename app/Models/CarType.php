@@ -9,4 +9,8 @@ class CarType extends Model
 {
     use HasFactory;
     public $timeStamp = false;
+
+    protected $fillable = [
+        'name',
+    ];
 }

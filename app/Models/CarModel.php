@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model as EloquentModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Model extends EloquentModel
+class CarModel extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = ['maker_id', 'name'];
 
@@ -21,6 +21,6 @@ class Model extends EloquentModel
 
     public function cars(): HasMany
     {
-        return $this->hasMany(Car::class, 'model_id');
+        return $this->hasMany(Car::class, 'car_model_id');
     }
 }

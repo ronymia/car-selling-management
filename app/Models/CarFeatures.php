@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CarFeatures extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $primaryKey = 'car_id';
 
@@ -20,7 +20,7 @@ class CarFeatures extends Model
         'air_conditioning',
         'power_windows',
         'power_door_locks',
-        'gps_navigation_system',
+        'gps_navigation',
         'bluetooth_connectivity',
         'backup_camera',
         'cruise_control',

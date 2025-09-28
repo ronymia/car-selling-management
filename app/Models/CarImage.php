@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CarImage extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'car_id',
-        'image',
+        'image_path',
+        'position',
     ];
 
     public function car(): BelongsTo

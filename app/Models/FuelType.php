@@ -16,7 +16,7 @@ class FuelType extends Model
     // public $updated_at = 'update_date'
     // const UPDATE_AT = null;
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',

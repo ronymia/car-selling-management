@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class State extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',

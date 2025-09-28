@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class City extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',

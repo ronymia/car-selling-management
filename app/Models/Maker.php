@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Maker extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',
@@ -21,8 +21,8 @@ class Maker extends Model
         return $this->hasMany(Car::class, 'maker_id');
     }
 
-    public function models(): HasMany
+    public function car_models(): HasMany
     {
-        return $this->hasMany(Model::class, 'maker_id');
+        return $this->hasMany(CarModel::class, 'maker_id');
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CarType extends Model
 {
     use HasFactory;
-    public $timeStamp = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',

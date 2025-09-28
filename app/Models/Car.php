@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -15,7 +16,7 @@ class Car extends Model
 
     protected $fillable = [
         'maker_id',
-        'model_id',
+        'car_model_id',
         'year',
         'price',
         'vin',
@@ -44,9 +45,9 @@ class Car extends Model
     {
         return $this->belongsTo(Maker::class, 'maker_id');
     }
-    public function model(): BelongsTo
+    public function car_model(): BelongsTo
     {
-        return $this->belongsTo(Model::class, 'model_id');
+        return $this->belongsTo(CarModel::class, 'car_model_id');
     }
     public function owner(): BelongsTo
     {
@@ -62,14 +63,18 @@ class Car extends Model
         return $this->hasOne(CarFeatures::class, 'car_id');
     }
 
-    public function primaryImage()
+    public function primaryImage(): HasOne
     {
         return $this->hasOne(CarImage::class, 'car_id')->oldestOfMany('position');
     }
 
+    public function images(): HasMany
+    {
+        return $this->hasMany(CarImage::class, 'car_id');
+    }
 
     public function favouredUsers(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'favoured_cars', 'car_id', 'user_id');
+        return $this->belongsToMany(User::class, 'favourite_cars', 'car_id', 'user_id');
     }
 }
